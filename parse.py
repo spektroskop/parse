@@ -8,9 +8,7 @@ def unit(v):
 def one(i):
     return [(i[0], i[1:])] if i else []
 
-@parser
-def none(_):
-    return []
+none = parser(lambda _: [])
 
 def many(p):
     return some(p) + unit("")
