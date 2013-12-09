@@ -19,7 +19,7 @@ class parser:
     def __ge__(self, other):
         return self.bind(other)
 
-    def __gt__(self, other):
+    def __rshift__(self, other):
         return self.then(other)
 
     def __add__(self, other):

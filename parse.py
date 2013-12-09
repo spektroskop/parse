@@ -40,4 +40,4 @@ def string(s):
     if not s:
         return unit("")
     else:
-        return char(s[0]) > (string(s[1:]) > unit(s))
+        return char(s[0]) >> (string(s[1:]) >> unit(s))
