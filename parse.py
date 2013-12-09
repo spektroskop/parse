@@ -4,9 +4,7 @@ from aux import *
 def unit(v):
     return parser(lambda i: [(v, i)])
 
-@parser
-def one(i):
-    return [(i[0], i[1:])] if i else []
+one = parser(lambda i: [(i[0], i[1:])] if i else [])
 
 none = parser(lambda _: [])
 
