@@ -1,11 +1,11 @@
 from aux import *
 
 class parser:
-    def __init__(self, value):
-        self.value = value
+    def __init__(self, method):
+        self.method = method
 
     def __call__(self, i):
-        return self.value(i)
+        return self.method(i)
 
     def bind(self, other):
         return parser(lambda i: concat([other(v)(o) for (v, o) in self(i)]))
