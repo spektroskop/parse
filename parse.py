@@ -20,7 +20,7 @@ def satisfy(p):
     return one >= (lambda x: unit(x) if p(x) else none)
 
 def char(c):
-    return satisfy(eqp(c))
+    return satisfy(lambda x: x == c)
 
 digit = satisfy(str.isdigit)
 alpha = satisfy(str.isalpha)
@@ -30,7 +30,10 @@ lower = satisfy(str.islower)
 space = satisfy(str.isspace)
 
 def oneof(s):
-    return satisfy(containsp(s))
+    return satisfy(lambda x: x in s)
+
+def noneof(s):
+    return satisfy(lambda x: x not in s)
 
 def string(s):
     if not s:
